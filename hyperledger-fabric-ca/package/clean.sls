@@ -4,13 +4,13 @@
 {#- Get the `tplroot` from `tpldir` #}
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- set sls_config_clean = tplroot ~ '.config.clean' %}
-{%- from tplroot ~ "/map.jinja" import TEMPLATE with context %}
+{%- from tplroot ~ "/map.jinja" import hyperledger__fabric__ca with context %}
 
 include:
   - {{ sls_config_clean }}
 
-TEMPLATE-package-clean-pkg-removed:
+hyperledger-fabric-ca-package-clean-pkg-removed:
   pkg.removed:
-    - name: {{ TEMPLATE.pkg.name }}
+    - name: {{ hyperledger__fabric__ca.pkg.name }}
     - require:
       - sls: {{ sls_config_clean }}

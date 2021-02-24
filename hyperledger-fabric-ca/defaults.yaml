@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+hyperledger-fabric-ca:
+  pkg:
+    name: hyperledger-fabric-ca
+  rootgroup: root
+  config: '/etc/hyperledger-fabric-ca'
+  service:
+    name: hyperledger-fabric-ca
+  subcomponent:
+    config: '/etc/hyperledger-fabric-ca-subcomponent-formula.conf'
+  # Just here for testing
+  added_in_defaults: defaults_value
+  winner: defaults
