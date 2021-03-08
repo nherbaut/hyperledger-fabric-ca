@@ -5,6 +5,13 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import hyperledger__fabric__ca with context %}
 
+include:
+  - golang
+
 hyperledger-fabric-ca-package-install-pkg-installed:
   pkg.installed:
-    - name: {{ hyperledger__fabric__ca.pkg.name }}
+    - refresh: True
+    - pkgs: 
+      - libtool 
+      - libltdl-dev
+
