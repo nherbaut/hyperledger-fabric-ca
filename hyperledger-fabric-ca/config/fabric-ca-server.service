@@ -1,0 +1,12 @@
+[Unit]
+Description=Hyperledger fabric ca server
+After=network.target
+StartLimitIntervalSec=0[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/root/go/bin/fabric-ca-server start -b admin:adminpw
+
+[Install]
+WantedBy=multi-user.target
