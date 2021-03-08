@@ -17,10 +17,10 @@ hyperledger-fabric-ca-package-install-pkg-installed:
 
 /etc/systemd/system/fabric-ca-server.service:
   file.managed:
-  - source: salt://hyperledger-fabric-ca/service/fabric-ca-server.service
-  - template: jinja
+    - source: salt://hyperledger-fabric-ca/service/fabric-ca-server.service
+    - template: jinja
 
 fabric-ca-server:
   service.running: []
-  - require:
-  - file: /etc/systemd/system/fabric-ca-server.service
+    - require:
+    - file: /etc/systemd/system/fabric-ca-server.service
