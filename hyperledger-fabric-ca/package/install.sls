@@ -16,7 +16,7 @@ hyperledger-fabric-ca-package-install-pkg-installed:
       - libltdl-dev
 
 /etc/systemd/system/fabric-ca-server.service:
-    file.managed:
+  file.managed:
     - source: salt://hyperledger-fabric-ca/hyperledger-fabric-ca/config/fabric-ca-server.service
     - template: jinja
 
